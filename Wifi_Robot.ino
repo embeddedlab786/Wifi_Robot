@@ -22,7 +22,7 @@ const char* password = "87654321";
 
 String command;             //String to store app command state.
 int speedCar = 150; // 0 to 255
-int speed_Coeff = 60;
+int speed_low = 60;
 
 ESP8266WebServer server(80);
 
@@ -139,7 +139,7 @@ void goForwordRight(){
       
       digitalWrite(IN_1, HIGH);
       digitalWrite(IN_2, LOW);
-      analogWrite(ENA, speedCar-speed_Coeff);
+      analogWrite(ENA, speedCar-speed_low);
  
       digitalWrite(IN_3, LOW);
       digitalWrite(IN_4, HIGH);
@@ -154,14 +154,14 @@ void goForwordLeft(){
 
       digitalWrite(IN_3, LOW);
       digitalWrite(IN_4, HIGH);
-      analogWrite(ENB, speedCar-speed_Coeff);
+      analogWrite(ENB, speedCar-speed_low);
   }
 
 void goBackRight(){ 
 
       digitalWrite(IN_1, LOW);
       digitalWrite(IN_2, HIGH);
-      analogWrite(ENA, speedCar-speed_Coeff);
+      analogWrite(ENA, speedCar-speed_low);
 
       digitalWrite(IN_3, HIGH);
       digitalWrite(IN_4, LOW);
@@ -176,7 +176,7 @@ void goBackLeft(){
 
       digitalWrite(IN_3, HIGH);
       digitalWrite(IN_4, LOW);
-      analogWrite(ENB, speedCar-speed_Coeff);
+      analogWrite(ENB, speedCar-speed_low);
   }
 
 void stopRobot(){  
